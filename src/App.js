@@ -1,24 +1,40 @@
-import logo from './logo.svg';
+import react,{useState} from "react"
 import './App.css';
-
+import Navbar from './components/Navbar';
+import Banner from './components/Banner';
+import Movies from './components/Movies';
+import {BrowserRouter,Route,Routes} from "react-router-dom"
+import Favorites from './components/Favorites';
 function App() {
+let [data,setdata]=useState([])
+function passData(item){
+  let arr=[...data,item];
+  setdata(arr)
+}
+const validateCross=(id)=>{
+  let list=data.filter((element)=>{
+     return(element!==id)
+  })
+  setdata(list)
+}
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+     <Navbar/>
+    <Routes>
+      <Route path='/' element={
+        <>
+        <Banner/>
+        <Movies mydata={data} validateCross={validateCross} performFav={passData} sendData={data}/>
+        </>
+      }></Route>
+      <Route path='/fav' element={
+      <Favorites list={data}>
+      </Favorites>
+    }>
+{console.log(data)}
+      </Route>
+    </Routes>
+    </BrowserRouter>
   );
 }
 
