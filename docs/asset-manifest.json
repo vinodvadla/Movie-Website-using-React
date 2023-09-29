@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.ee28c197.css",
+    "main.js": "/static/js/main.567ef164.js",
+    "static/js/787.741971bc.chunk.js": "/static/js/787.741971bc.chunk.js",
+    "static/media/pngfind.com-movie-reel-png-974886.png": "/static/media/pngfind.com-movie-reel-png-974886.eef5dc2aa85d15e13d80.png",
+    "index.html": "/index.html",
+    "main.ee28c197.css.map": "/static/css/main.ee28c197.css.map",
+    "main.567ef164.js.map": "/static/js/main.567ef164.js.map",
+    "787.741971bc.chunk.js.map": "/static/js/787.741971bc.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ee28c197.css",
+    "static/js/main.567ef164.js"
+  ]
+}
